@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="TestSerlet:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/TestSerlet_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="TestSerlet/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="TestSerlet" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
