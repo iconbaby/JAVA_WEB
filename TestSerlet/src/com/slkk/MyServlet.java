@@ -1,6 +1,8 @@
 package com.slkk;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,13 +14,13 @@ import java.util.Enumeration;
 
 
 public class MyServlet extends HttpServlet {
-    private ServletConfig mConfig;
-
-    @Override
-    public void init(ServletConfig config) throws ServletException {
-
-        this.mConfig = config;
-    }
+//    private ServletConfig mConfig;
+//
+//    @Override
+//    public void init(ServletConfig config) throws ServletException {
+//        super.init();
+//        this.mConfig = config;
+//    }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
@@ -53,15 +55,29 @@ public class MyServlet extends HttpServlet {
 //        String name = mConfig.getInitParameter("name");
 //        response.getWriter().println(name);
 
-        Enumeration<String> initParameterNames = mConfig.getInitParameterNames();
-        while (initParameterNames.hasMoreElements()) {
+//        Enumeration<String> initParameterNames = mConfig.getInitParameterNames();
+//        while (initParameterNames.hasMoreElements()) {
+//
+//            String key = initParameterNames.nextElement();
+//            String value = mConfig.getInitParameter(key);
+//
+//            response.getWriter().println(value);
+//
+//        }
+//
+/**
+ * servletContext 获取context parameter
+ */
+//        ServletContext servletContext = this.getServletContext();
+//        String url = servletContext.getInitParameter("url");
+//        response.getWriter().println(url);
 
-            String key = initParameterNames.nextElement();
-            String value = mConfig.getInitParameter(key);
-
-            response.getWriter().println(value);
-
-        }
+/**
+ * servlet 转发请求
+ */
+        ServletContext servletContext = this.getServletContext();
+        RequestDispatcher requestDispatcher = servletContext.getRequestDispatcher("/servlet2");
+        requestDispatcher.forward(request, response);
 
     }
 }

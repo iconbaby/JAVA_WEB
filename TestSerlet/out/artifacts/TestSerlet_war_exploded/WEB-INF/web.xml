@@ -3,6 +3,11 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+    <context-param>
+        <param-name>url</param-name>
+        <param-value>jdc:mysql://localhost:3306</param-value>
+    </context-param>
+
     <servlet>
         <servlet-name>myserlet</servlet-name>
         <servlet-class>com.slkk.MyServlet</servlet-class>
@@ -22,5 +27,14 @@
     <servlet-mapping>
         <servlet-name>myserlet</servlet-name>
         <url-pattern>/servlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>myServlet2</servlet-name>
+        <servlet-class>com.slkk.MyServlet2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>myServlet2</servlet-name>
+        <url-pattern>/servlet2</url-pattern>
     </servlet-mapping>
 </web-app>
