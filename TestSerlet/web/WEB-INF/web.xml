@@ -46,4 +46,12 @@
         <servlet-name>ServletDemoReadFileWithClassLoader</servlet-name>
         <url-pattern>/ServletDemoReadFileWithClassLoader</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>ResponseDemo1</servlet-name>
+        <servlet-class>com.slkk.ResponseDemo1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResponseDemo1</servlet-name>
+        <url-pattern>/responseDemo1</url-pattern>
+    </servlet-mapping>
 </web-app>
