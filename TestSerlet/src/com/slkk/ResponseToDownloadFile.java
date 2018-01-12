@@ -38,7 +38,8 @@ public class ResponseToDownloadFile extends HttpServlet {
         String filePath = this.getServletContext().getRealPath("/WEB-INF/挪威一号公路.jpg");
         String fileName = filePath.substring(filePath.lastIndexOf("\\") + 1);
         try {
-            response.setHeader("content-disposition", "attachment;filename=" + URLEncoder.encode(fileName,"utf-8"));
+            //带有中文的文件名要使用URLEncode 进行编码
+            response.setHeader("content-disposition", "attachment;filename=" + URLEncoder.encode(fileName, "utf-8"));
             InputStream fileInputStream = new FileInputStream(filePath);
             ServletOutputStream outputStream = response.getOutputStream();
             byte[] buffer = new byte[1024];
