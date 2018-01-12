@@ -54,4 +54,12 @@
         <servlet-name>ResponseDemo1</servlet-name>
         <url-pattern>/responseDemo1</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>ResponseToDownloadFile</servlet-name>
+        <servlet-class>com.slkk.ResponseToDownloadFile</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResponseToDownloadFile</servlet-name>
+        <url-pattern>/downloadFile</url-pattern>
+    </servlet-mapping>
 </web-app>
